@@ -13,7 +13,7 @@ interface DataItem {
 }
 
 // DataTable component that displays statistical measures for Flavanoids and Gamma
-function DataTable({ data, }: DataTableProps) {
+function DataTable({ data }: DataTableProps) {
   // Helper function to filter data by class
   const filterDataByClass = (dataArray: DataItem[], classValue: number) => {
     return dataArray.filter((item) => item.Class === classValue);
@@ -90,47 +90,71 @@ function DataTable({ data, }: DataTableProps) {
   const modeClass2Gamma = calculateMode(class2Data, "Gamma");
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Measure</th>
-          <th>Class 1</th>
-          <th>Class 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <DataRow
-          name="Flavanoids Mean"
-          value1={meanClass1Flavanoids}
-          value2={meanClass2Flavanoids}
-        />
-        <DataRow
-          name="Flavanoids Median"
-          value1={medianClass1Flavanoids}
-          value2={medianClass2Flavanoids}
-        />
-        <DataRow
-          name="Flavanoids Mode"
-          value1={modeClass1Flavanoids}
-          value2={modeClass2Flavanoids}
-        />
-        <DataRow
-          name="Gamma Mean"
-          value1={meanClass1Gamma}
-          value2={meanClass2Gamma}
-        />
-        <DataRow
-          name="Gamma Median"
-          value1={medianClass1Gamma}
-          value2={medianClass2Gamma}
-        />
-        <DataRow
-          name="Gamma Mode"
-          value1={modeClass1Gamma ?? "N/A"}
-          value2={modeClass2Gamma ?? "N/A"}
-        />
-      </tbody>
-    </table>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        gap: "10px",
+        width: "50%",
+        flexDirection:"column"
+      }}
+    >
+      <table>
+        <caption>Flavanoids Statistics</caption>
+        <thead>
+          <tr>
+            <th>Measure</th>
+            <th>Class 1</th>
+            <th>Class 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <DataRow
+            name="Flavanoids Mean"
+            value1={meanClass1Flavanoids}
+            value2={meanClass2Flavanoids}
+          />
+          <DataRow
+            name="Flavanoids Median"
+            value1={medianClass1Flavanoids}
+            value2={medianClass2Flavanoids}
+          />
+          <DataRow
+            name="Flavanoids Mode"
+            value1={modeClass1Flavanoids}
+            value2={modeClass2Flavanoids}
+          />
+        </tbody>
+      </table>
+
+      <table>
+        <caption>Gamma Statistics</caption>
+        <thead>
+          <tr>
+            <th>Measure</th>
+            <th>Class 1</th>
+            <th>Class 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <DataRow
+            name="Gamma Mean"
+            value1={meanClass1Gamma}
+            value2={meanClass2Gamma}
+          />
+          <DataRow
+            name="Gamma Median"
+            value1={medianClass1Gamma}
+            value2={medianClass2Gamma}
+          />
+          <DataRow
+            name="Gamma Mode"
+            value1={modeClass1Gamma ?? "N/A"}
+            value2={modeClass2Gamma ?? "N/A"}
+          />
+        </tbody>
+      </table>
+    </div>
   );
 }
 
