@@ -1,8 +1,28 @@
+React Data Analysis App
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based data analysis application that allows you to calculate and display statistical measures for a dataset. You can use it to calculate and visualize the mean, median, and mode for specific properties within your data.
+
+## Prerequisites
+
+Before you begin, make sure you have Node.js and npm (or Yarn) installed on your system.
 
 ## Available Scripts
+
+Features
+Calculate and display statistical measures for a dataset.
+Dynamically filter data based on class name.
+Display results in a tabular format.
+Built using React and TypeScript.
+
+### Clone Repository
+
+git clone https://github.com/data-analysis-app.git
+
+cd /data-analysis-app
+
+### `npm install`
 
 In the project directory, you can run:
 
@@ -13,11 +33,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
